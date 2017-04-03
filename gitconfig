@@ -1,0 +1,6 @@
+[user]
+	mail = theo.dammaretz@gmail.com
+	name = Blightwidow
+	email = theo.dammaretz@orange.fr
+[credential]
+	helper = store --file ~/.git-credentials
