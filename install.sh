@@ -14,13 +14,13 @@ echo "	...done"
 # create symlinks
 for file in $files; do
     echo -n "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
+    ln -fs $dir/$file ~/.$file
     echo "	...done"
 done
 
 # create simlink for visual studio
 for file in $files; do
     echo -n "Creating symlink to $file in home directory."
-    ln -s $dir/$vscode ~/.config/Code/User/settings.json
+    ln -fs $dir/$vscode ~/.config/Code/User/settings.json
     echo "	...done"
 done
