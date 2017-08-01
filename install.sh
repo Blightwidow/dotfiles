@@ -3,7 +3,7 @@
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
-files="gitconfig conkyrc vscode"    # list of files/folders to symlink in homedir
+files="gitconfig conkyrc"    # list of files/folders to symlink in homedir
 vscode="vssettings"
 
 # change to the dotfiles directory
