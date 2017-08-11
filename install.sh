@@ -2,25 +2,19 @@
 
 ########## Variables
 
-dir=~/dotfiles                    # dotfiles directory
-files="gitconfig conkyrc"    # list of files/folders to symlink in homedir
-vscode="vssettings"
+dir=$(pwd)/files              # dotfiles directory
+files=$(ls -a $dir/files)       # list of files/folders to symlink in homedir
+packages="vscode vlc google-chrome"   # list of packages to install
 
-# change to the dotfiles directory
-echo -n "Changing to the $dir directory"
-cd $dir
+# copy files
+for file in $files; do
+    echo -n "Copying $file in home directory."
+    cp -fr $dir/$file ~
+    echo "	...done"
+done
+
+# install packages
+echo -n "Installing packages"
+yaourt $packages
 echo "	...done"
 
-# create symlinks
-for file in $files; do
-    echo -n "Creating symlink to $file in home directory."
-    ln -fs $dir/$file ~/.$file
-    echo "	...done"
-done
-
-# create simlink for visual studio
-for file in $files; do
-    echo -n "Creating symlink to $file in home directory."
-    ln -fs $dir/$vscode ~/.config/Code/User/settings.json
-    echo "	...done"
-done
