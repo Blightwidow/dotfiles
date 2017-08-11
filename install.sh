@@ -4,7 +4,15 @@
 
 dir=$(pwd)/files              # dotfiles directory
 files=$(ls -A $dir)       # list of files/folders to symlink in homedir
-packages="vscode vlc google-chrome"   # list of packages to install
+packages="vscode docker nodejs npm fish-shell vlc google-chrome"   # list of packages to install
+
+# install packages
+for package in $packages; do
+    echo "Installing package $package"
+    yaourt $package
+    echo "	...done"
+done
+echo "	...done"
 
 # copy files
 for file in $files; do
@@ -12,9 +20,4 @@ for file in $files; do
     cp -r --remove-destination $dir/$file ~
     echo "	...done"
 done
-
-# install packages
-echo "Installing packages"
-yaourt $packages
-echo "	...done"
 
