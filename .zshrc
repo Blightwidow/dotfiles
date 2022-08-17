@@ -11,6 +11,7 @@ export PATH="/usr/local/bin:$PATH"
 export HUSKY_ENABLE_TYPE_CHECK=1
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$(pyenv root)/shims:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
 export EDITOR="nvim"
 
 ZSH_DISABLE_COMPFIX=true
